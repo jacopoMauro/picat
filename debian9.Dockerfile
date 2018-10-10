@@ -18,7 +18,7 @@ RUN apt-get update && \
 	wget http://picat-lang.org/flatzinc/fzn_tokenizer.pi && \
 	echo '#! /bin/sh \n\
 /tool/picat/picat /tool/picat/fzn_picat  "$@"' > /tool/picat/fzn-picat && \
-	chmod 700 fzn-picat &&
+	chmod 700 fzn-picat && \
 	wget http://picat-lang.org/flatzinc/picat_globals.tar.gz && \
 	tar xvfz picat_globals.tar.gz && \
 	rm picat_globals.tar.gz && \
