@@ -4,12 +4,13 @@ MAINTAINER Jacopo Mauro
 RUN apt-get update && \
 	apt-get install -y \
 		wget && \
+	apt-get -y install openssh-client && \
  	rm -rf /var/lib/apt/lists/* && \
 	mkdir /tool && \
 	cd /tool && \
-	wget http://picat-lang.org/download/picat25_linux64.tar.gz  && \
-	tar xvfz picat25_linux64.tar.gz && \
-	rm picat25_linux64.tar.gz && \
+	wget http://picat-lang.org/download/picat26_linux64.tar.gz  && \
+	tar xvfz picat26_linux64.tar.gz && \
+	rm picat26_linux64.tar.gz && \
 	mv Picat picat && \
 	cd picat && \
 	wget http://picat-lang.org/flatzinc/fzn_picat_sat.pi  && \
