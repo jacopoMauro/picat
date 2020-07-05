@@ -8,9 +8,9 @@ RUN apt-get update && \
  	rm -rf /var/lib/apt/lists/* && \
 	mkdir /tool && \
 	cd /tool && \
-	wget http://picat-lang.org/download/picat26_linux64.tar.gz  && \
-	tar xvfz picat26_linux64.tar.gz && \
-	rm picat26_linux64.tar.gz && \
+	wget http://picat-lang.org/download/picat28_linux64.tar.gz  && \
+	tar xvfz picat28_linux64.tar.gz && \
+	rm picat28_linux64.tar.gz && \
 	mv Picat picat && \
 	cd picat && \
 	wget http://picat-lang.org/flatzinc/fzn_picat_sat.pi  && \
@@ -20,10 +20,11 @@ RUN apt-get update && \
 	echo '#! /bin/sh \n\
 /tool/picat/picat /tool/picat/fzn_picat_sat  "$@"' > /tool/picat/fzn-picat && \
 	chmod 700 fzn-picat && \
+	mkdir picat_globals && \
 	wget http://picat-lang.org/flatzinc/picat_globals.tar.gz && \
-	tar xvfz picat_globals.tar.gz && \
+	tar xvfz picat_globals.tar.gz -C picat_globals && \
 	rm picat_globals.tar.gz && \
-	mv globals mzn-lib
+	mv picat_globals mzn-lib
 
 ENV PATH "$PATH:/tool/picat/"
 
