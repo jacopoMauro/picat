@@ -8,9 +8,9 @@ RUN apt-get update && \
  	rm -rf /var/lib/apt/lists/* && \
 	mkdir /tool && \
 	cd /tool && \
-	wget http://picat-lang.org/download/picat28_linux64.tar.gz  && \
-	tar xvfz picat28_linux64.tar.gz && \
-	rm picat28_linux64.tar.gz && \
+	wget http://picat-lang.org/download/picat28_6_linux64.tar.gz  && \
+	tar xvfz picat28_6_linux64.tar.gz && \
+	rm picat28_6_linux64.tar.gz && \
 	mv Picat picat && \
 	cd picat && \
 	wget http://picat-lang.org/flatzinc/fzn_picat_sat.pi  && \
